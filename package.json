@@ -1,0 +1,30 @@
+{
+  "name": "lib-client-elrn-identity",
+  "version": "0.0.1",
+  "description": "blockstack wrapper",
+  "main": "index.js",
+  "repository": {
+    "type": "git"
+  },
+  "author": "Dylan Drudge",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "is-buffer": "^2.0.2",
+    "jsdom": "11.11.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^5.1.1"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors -r jsdom-global/register --require babel-core/register --require babel-polyfill ./test/*_test.js",
+    "integration-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/*_test.js",
+    "blockstack-only-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/blockstack_test.js"
+  },
+  "dependencies": {
+    "blockstack": "^17.2.0"
+  }
+}
